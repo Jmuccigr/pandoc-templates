@@ -10,6 +10,13 @@ $if(beamer)$
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
 \beamertemplatenavigationsymbols$if(navigation)$$navigation$$else$empty$endif$
+% My addition - JDM
+% Remove label "Figure" & shrink image captions
+% Needs to be here to take effect, unlike other table invocation
+\usepackage{caption}
+\captionsetup{font=scriptsize}
+\captionsetup[figure]{labelformat=empty}
+% end of my addition
 $endif$
 $if(beamerarticle)$
 \usepackage{beamerarticle} % needs to be loaded first
@@ -190,13 +197,11 @@ $endif$
 $if(graphics)$
 \usepackage{graphicx,grffile}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
 \makeatother
-% Scale images if necessary, so that they will not overflow the page
+% Scale all images, so that they will fill, but not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setkeys{Gin}{width=\linewidth,height=0.9\textheight,keepaspectratio}
 $endif$
 $if(beamer)$
 % Prevent slide breaks in the middle of a paragraph:
