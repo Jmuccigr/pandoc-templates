@@ -5,12 +5,12 @@ $if(colorlinks)$
 $endif$
 %
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$if(beamer)$ignorenonframetext,$if(handout)$handout,$endif$$if(aspectratio)$aspectratio=$aspectratio$,$endif$$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
-$if(backgroundImage)$
+$if(beamer)$
+$if(background-image)$
 \usebackgroundtemplate{%
-\includegraphics[width=\paperwidth]{$backgroundImage$}%
+\includegraphics[width=\paperwidth]{$background-image$}%
 }
 $endif$
-$if(beamer)$
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
